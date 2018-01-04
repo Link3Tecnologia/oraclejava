@@ -13,6 +13,7 @@ RUN touch /etc/profile.d/java_envs.sh
 RUN chmod +x /etc/profile.d/java_envs.sh
 ENV JAVA_HOME=/opt/$JAVA_PATH
 ENV JRE_HOME=$JAVA_HOME/jre
+ENV PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 RUN echo "export JAVA_HOME=$JAVA_HOME" >> /etc/profile.d/java_envs.sh
 RUN echo "export JRE_HOME=$JRE_HOME" >> /etc/profile.d/java_envs.sh
 RUN echo "export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin" >> /etc/profile.d/java_envs.sh
