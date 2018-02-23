@@ -19,3 +19,5 @@ RUN echo "export JRE_HOME=$JRE_HOME" >> /etc/profile.d/java_envs.sh
 RUN echo "export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin" >> /etc/profile.d/java_envs.sh
 RUN source /etc/profile.d/java_envs.sh
 RUN rm $FILE_NAME
+ENV TZ=America/Bahia
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
